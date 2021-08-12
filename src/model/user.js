@@ -25,6 +25,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    emailToken: {
+      type: String
+  },
+  verifiedForReset: {
+      type: Boolean,
+      default: false
+  },
+  tokens: [{
+    token: {
+        type: String,
+    }
+}]
   },
   { collection: "user", timestamp: true }
 );
