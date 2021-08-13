@@ -2,7 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/user");
+const User = require("../model/user");
 const emailVerification = require("../utils/verifyEmail");
 
 
@@ -80,3 +80,5 @@ router.post("/api/reset-password", async (req, res) => {
       return res.json({ status: "error", msg: "something went wrong" });
   }
 });
+
+module.exports = router
